@@ -44,6 +44,13 @@ class _SignUpPageState extends State<SignUpPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+           // Adjust the padding as needed
+          Image.asset(
+            'images/logo.png',  // Replace with your actual logo asset path
+            width: 150,  // Adjust the size as needed
+            height: 150,
+          ),
+
               Text(
                 "Sign Up",
                 style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold),
@@ -61,7 +68,7 @@ class _SignUpPageState extends State<SignUpPage> {
               ),
               FormContainerWidget(
                 controller: _emailController,
-                hintText: "Email",
+                hintText: "example@eng.asu.edu.eg",
                 isPasswordField: false,
               ),
               SizedBox(
@@ -132,10 +139,30 @@ class _SignUpPageState extends State<SignUpPage> {
     setState(() {
       isSigningUp = true;
     });
+/*String email = _emailController.text;
+  String password = _passwordController.text;
 
+  // Check if the email domain is correct
+  if (!email.endsWith('@eng.asu.edu.eg')) {
+    showToast(message: "Please use your university email to sign up");
+    setState(() {
+      isSigningUp = false;
+    });
+    return;
+  }
+
+  User? user = await _auth.signUpWithEmailAndPassword(email, password);
+*/
     String username = _usernameController.text;
     String email = _emailController.text;
     String password = _passwordController.text;
+    if (!email.endsWith('@eng.asu.edu.eg')) {
+      showToast(message: "Please use your university email to sign up");
+      setState(() {
+        isSigningUp = false;
+      });
+      return;
+    }
 
     User? user = await _auth.signUpWithEmailAndPassword(email, password);
 

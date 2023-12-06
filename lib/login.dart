@@ -46,6 +46,14 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Padding(
+                padding: const EdgeInsets.only(bottom: 20.0),  // Adjust the padding as needed
+                child: Image.asset(
+                  'images/Home.png',  // Replace with your actual logo asset path
+                  width: 150,  // Adjust the size as needed
+                  height: 150,
+                ),
+              ),
               Text(
                 "Login",
                 style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold),
@@ -55,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               FormContainerWidget(
                 controller: _emailController,
-                hintText: "Email",
+                hintText: "example@eng.asu.edu.eg",
                 isPasswordField: false,
               ),
               SizedBox(

@@ -4,9 +4,14 @@ import 'login.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'intro.dart';
 import 'signUp.dart';
+import 'cart.dart';
 import 'auth.dart';
 import 'RoutesPage.dart';
+import 'package:sqflite_common_ffi/sqflite_ffi.dart';
+
 Future main() async {
+  /*sqfliteFfiInit();
+  databaseFactory = databaseFactoryFfi;*/
   WidgetsFlutterBinding.ensureInitialized();
   if (kIsWeb) {
     await Firebase.initializeApp(
